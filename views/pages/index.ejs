@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head'); %>
+  <body>
+    <%- include('../partials/header'); %>
+    <main>
+      <!-- Jumbotron -->
+      <div class="text-center bg-gray-50 text-gray-800 py-20 px-6">
+        <h1 class="text-5xl font-bold mt-0 mb-6">EJS</h1>
+        <h3 class="text-3xl font-bold mb-8">Embedded JavaScript templating</h3>
+      </div>
+      <!-- Jumbotron -->
+      <!-- List items -->
+      <div class="flex justify-center py-6">
+        <ul
+          class="bg-white rounded-lg border border-gray-200 w-96 text-gray-900"
+        >
+          <% items.map((item) => { %>
+          <li class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg">
+            <strong><%= item.message.charAt(0) %></strong><%=
+            item.message.slice(1) %>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
+      <!-- List items -->
+    </main>
+
+    <%- include('../partials/footer'); %>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+  </body>
+</html>
